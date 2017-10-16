@@ -1,0 +1,93 @@
+/* 游ゴシックに対する設定  */
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Bold");
+  font-weight: bold;
+}
+
+h1, h2{
+  font-family: "Yu Gothic", YuGothic, meiryo, sans-serif;
+  font-weight: 300;
+  border-left: 10px solid #0D47A1;
+  border-bottom: 1px dashed #0D47A1;
+}
+
+/*  HTML本文部分に関する設定  */
+body {
+  font-family: meiryo, sans-serif;
+  font-weight: 300;
+}
+
+/*  検索窓と追加ボタンを横並びにする設定  */
+ul.func {
+  display: table;
+  table-layout: fixed;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+ul.func li{
+  display: table-cell;
+  vertical-align: 5px;
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-right: 5px;
+}
+
+/*  検索窓及びボタンに対するフォント設定 */
+button, input, select, textarea {
+  font-family : inherit;
+  font-size   : 100%;
+}
+
+/*  aタグ(リンク)に対する文字色の設定  */
+a {
+  text-decoration: none;
+  color: #1565C0;
+}
+
+a:visited {
+  color: #1565C0;
+}
+
+/*  テーブルに対する設定  */
+table.books {
+  font-weight: 300;
+  border-collapse: separate;
+  border-spacing: 1px;
+  line-height: 1.5;
+}
+table.books th {
+  font-weight: 300;
+  padding: 5px;
+  vertical-align: top;
+  text-align: center;
+  color: #fff;
+  background: #42A5F5;
+}
+table.books td {
+  font-size: 0.9em;
+  padding: 2px;
+  vertical-align: top;
+  text-align: left;
+  background: #E3F2FD;
+}
