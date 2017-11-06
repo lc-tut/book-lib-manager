@@ -1,3 +1,10 @@
+<?php
+  function h($str){
+    return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -34,7 +41,7 @@
       die();
     }
     ?>
-    <h1>絞り込み <?php echo $_GET['column'].": ".$_GET['text'] ?></h1>
+    <h1>絞り込み <?php echo $h($_GET['column']).": ".$h($_GET['text']) ?></h1>
     <table class="books">
       <thead>
         <tr>
@@ -50,11 +57,11 @@
           while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
             ?>
               <tr>
-                <td><a href="edit.php?id=<?=htmlspecialchars($row['蔵書番号'])?>"><?=htmlspecialchars($row['タイトル'])?></a></th>
-          		  <td><a href="refine.php?column=著者&text=<?=htmlspecialchars($row['著者'])?>"><?=htmlspecialchars($row['著者'])?></a></th>
-          		  <td><a href="refine.php?column=イラスト&text=<?=htmlspecialchars($row['イラスト'])?>"><?=htmlspecialchars($row['イラスト'])?></a></th>
-          		  <td><a href="refine.php?column=出版&text=<?=htmlspecialchars($row['出版'])?>"><?=htmlspecialchars($row['出版'])?></a></th>
-          		  <td><a href="refine.php?column=種別&text=<?=htmlspecialchars($row['種別'])?>"><?=htmlspecialchars($row['種別'])?></a></th>
+                <td><a href="edit.php?id=<?=$h($row['蔵書番号'])?>"><?=$h($row['タイトル'])?></a></th>
+          		  <td><a href="refine.php?column=著者&text=<?=$h($row['著者'])?>"><?=$h($row['著者'])?></a></th>
+          		  <td><a href="refine.php?column=イラスト&text=<?=$h($row['イラスト'])?>"><?=$h($row['イラスト'])?></a></th>
+          		  <td><a href="refine.php?column=出版&text=<?=$h(['出版'])?>"><?=$h($row['出版'])?></a></th>
+          		  <td><a href="refine.php?column=種別&text=<?=$h($row['種別'])?>"><?=$h($row['種別'])?></a></th>
               </tr>
               <?php
           }
