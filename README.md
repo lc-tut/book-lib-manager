@@ -1,5 +1,15 @@
 # book-ilb-manager
 
+PHPとMySQLで作った蔵書管理システムです。
+
+よしなに改造することで、蔵書以外にも対応できるかと思います。
+
+ちなみに作者はコミックスと同人誌管理に使っています。
+
+## MySQLのデータベース作成法
+
+このようにデータベースおよびテーブルを作って下さい。
+
 ```MySQL
 
 CREATE DATABASE `<作成したいデータベース名>` COLLATE 'utf8mb4_general_ci';
@@ -18,3 +28,4 @@ CREATE TABLE `test` (
 
 
 ```
+
