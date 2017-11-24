@@ -1,0 +1,15 @@
+books table
+    ISBN (ISBN)
+    title (書籍名)
+    author (著者)
+    publisher (出版社)
+    genre (ジャンル)
+    loan (貸し出し状況)
+    borrower (借用者)
+
+
+
+各書籍 table
+    name (借用者)
+    datetime (手続き日時 UTCタイムスタンプ)
+    dc (debit credit new delete)
