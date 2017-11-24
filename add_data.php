@@ -9,9 +9,26 @@
     $stt -> bindValue(':ISBN', $_POST['ISBN']);
     $stt -> bindValue(':title', $_POST['title']);
     $stt -> bindValue(':author', $_POST['author']);
-    $stt -> bindValue(':illust', $_POST['illust']);
     $stt -> bindValue(':publisher', $_POST['publisher']);
     $stt -> bindValue(':genre', $_POST['genre']);
+  
+    $stt -> execute();
+    $db = NULL;
+
+    $db = getDb();
+    
+    $stm = "CREATE TABLE $_POST['ISBN'] (
+      borrower varchar(10) PRIMARY KEY, 
+      date_time timestamp NOT NULL default current_timestamp,
+      dc varchar(6) NOT NULL
+      )";
+
+    $db -> exec($stm);
+    $db = NULL;
+
+    $db = getDb();
+  
+    $stt = $db->prepare('INSERT INTO $_POST['ISBN'] (name, dc) VALUES("System", "new")');
   
     $stt -> execute();
     $db = NULL;
