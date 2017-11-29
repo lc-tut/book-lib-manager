@@ -34,7 +34,7 @@
       die();
     }
     ?>
-    <h1>絞り込み <?php echo $h($_GET['column']).": ".$h($_GET['text']) ?></h1>
+    <h1>絞り込み <?php print($h($_GET['column']).": ".$h($_GET['text'])); ?></h1>
     <table class="books">
       <thead>
         <tr>
