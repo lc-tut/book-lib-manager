@@ -4,7 +4,7 @@
   
     $db = getDb();
   
-    $stt = $db->prepare('INSERT INTO books(ISBN, title, author, publisher, genre)VALUES(:ISBN, :title, :author, :publisher, :genre)');
+    $stt = $db->prepare('INSERT INTO books(ID, ISBN, title, author, publisher, genre)VALUES(NULL, :ISBN, :title, :author, :publisher, :genre)');
   
     $stt -> bindValue(':ISBN', $_POST['ISBN']);
     $stt -> bindValue(':title', $_POST['title']);
