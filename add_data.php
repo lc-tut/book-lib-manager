@@ -4,14 +4,15 @@
   
     $db = getDb();
   
-    $stt = $db->prepare('INSERT INTO books(ID, ISBN, title, author, publisher, genre, status)VALUES(NULL, :ISBN, :title, :author, :publisher, :genre, :status)');
+    $stt = $db->prepare('INSERT INTO books(ID, ISBN, title, author, publisher, genre, status, borrower)VALUES(NULL, :ISBN, :title, :author, :publisher, :genre, :status, :borrower)');
   
     $stt -> bindValue(':ISBN', $_POST['ISBN']);
     $stt -> bindValue(':title', $_POST['title']);
     $stt -> bindValue(':author', $_POST['author']);
     $stt -> bindValue(':publisher', $_POST['publisher']);
     $stt -> bindValue(':genre', $_POST['genre']);
-    $stt -> bindValue(':status', "clubroom");
+    $stt -> bindValue(':status', "部室内書庫");
+    $stt -> bindValue(':borrower', "部室");
   
     $stt -> execute();
     $db = NULL;
