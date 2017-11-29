@@ -18,7 +18,7 @@
     $db = getDb();
     
     $isbn = $_POST['ISBN'];
-    $stt = $db->prepare('CREATE TABLE `'.$isbn.'`( ID int(3) unsigned zerofill  NOT NULL AUTO_INCREMENT PRIMARY KEY, borrower varchar(10) COLLATE utf8mb4_general_ci NOT NULL, date_time timestamp NOT NULL DEFAULT current_timestamp, dc varchar(6) COLLATE utf8mb4_general_ci NOT NULL ) ENGINE=InnoDB COLLATE utf8mb4_general_ci;');
+    $stt = $db->prepare('CREATE TABLE `'.$isbn.'`( ID int(3) unsigned zerofill  NOT NULL AUTO_INCREMENT PRIMARY KEY, borrower varchar(10) COLLATE utf8mb4_general_ci NOT NULL, date_time datetime NOT NULL DEFAULT current_timestamp, dc varchar(6) COLLATE utf8mb4_general_ci NOT NULL ) ENGINE=InnoDB COLLATE utf8mb4_general_ci;');
 
     #$stt -> bindValue(':ISBN', $isbn);
     $stt -> execute();
