@@ -28,7 +28,7 @@
   
     $stt = $db->prepare('INSERT INTO `'.$isbn."` (borrower, date_time, dc) VALUES(:name, current_timestamp(), :dc)");
     $stt -> bindValue(':name', "system");
-    $stt -> bindValue(':dc', "New submit");
+    $stt -> bindValue(':dc', "New");
   
     $stt -> execute();
     $db = NULL;
