@@ -51,7 +51,7 @@
           while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
             ?>
               <tr>
-                <td><a href="edit.php?id=<?=$h($row['ISBN'])?>"><?=$h($row['title'])?></a></th>
+                <td><a href="edit.php?isbn=<?=$h($row['ISBN'])?>"><?=$h($row['title'])?></a></th>
           		  <td><a href="refine.php?column=author&text=<?=$h($row['author'])?>"><?=$h($row['author'])?></a></th>
           		  <td><a href="refine.php?column=publisher&text=<?=$h(['publisher'])?>"><?=$h($row['publisher'])?></a></th>
           		  <td><a href="refine.php?column=genre&text=<?=$h($row['genre'])?>"><?=$h($row['genre'])?></a></th>

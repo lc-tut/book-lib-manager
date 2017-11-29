@@ -21,6 +21,7 @@ https://qiita.com/tabo_purify/items/2575a58c54e43cd59630
 
 
 各書籍 table
+    ID (添字)
     borrower (借用者)
     date_time (手続き日時 UTCタイムスタンプ)
     dc (return borrow new delete)
