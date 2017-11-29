@@ -18,9 +18,9 @@
     $db = getDb();
     
     $isbn = $_POST['ISBN'];
-    $stt = $db->prepare('CREATE TABLE :ISBN(borrower varchar(10) PRIMARY KEY, date_time timestamp NOT NULL default current_timestamp, dc varchar(6) NOT NULL)');
+    $stt = $db->prepare('CREATE TABLE '.$isbn.'(borrower varchar(10) PRIMARY KEY, date_time timestamp NOT NULL default current_timestamp, dc varchar(6) NOT NULL)');
 
-    $stt -> bindValue(':ISBN', $isbn);
+    #$stt -> bindValue(':ISBN', $isbn);
     $stt -> execute();
     $db = NULL;
 
