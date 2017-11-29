@@ -26,7 +26,7 @@
       try{
         if(empty($_GET['keyword'])) throw new Exception("検索キーワードが入力されていません");
         $char = $_GET['keyword'];
-        $sql = "SELECT * FROM books WHERE title LIKE '%$char%' or author LIKE '%$char%' or publisher LIKE '%$char%' or genre LIKE '%$char%' or loan LIKE '%$char%' or borrower LIKE '%$char%'";
+        $sql = "SELECT * FROM books WHERE title LIKE '%$char%' or author LIKE '%$char%' or publisher LIKE '%$char%' or genre LIKE '%$char%' or status LIKE '%$char%' or borrower LIKE '%$char%'";
         $stmh = $db->prepare($sql);
         $stmh->execute();
       }catch(Exception $Exception){

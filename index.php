@@ -50,7 +50,7 @@
           <th>出版社</th>
           <th>ジャンル</th>
           <th>貸出状況</th>
-          <th>借用者</th>
+          <th>所在・借用者</th>
         </tr>
       </thead>
       <tbody>
