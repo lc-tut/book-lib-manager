@@ -26,7 +26,7 @@
 
     $db = getDb();
   
-    $stt = $db->prepare('INSERT INTO `'.$_POST['ISBN']."` (name, dc) VALUES(:name, :dc)");
+    $stt = $db->prepare('INSERT INTO `'.$_POST['ISBN']."` (borrower, dc) VALUES(:name, :dc)");
     $stt -> bindValue(':name', "system");
     $stt -> bindValue(':dc', "New submit");
   
