@@ -62,7 +62,7 @@
         	  <td><a href="refine.php?column=author&text=<?=h($row['author'])?>"><?=h($row['author'])?></a></th>
         	  <td><a href="refine.php?column=publisher&text=<?=h($row['publisher'])?>"><?=h($row['publisher'])?></a></th>
         	  <td><a href="refine.php?column=genre&text=<?=h($row['genre'])?>"><?=h($row['genre'])?></a></th>
-        	  <td><a href="refine.php?column=loan&text=<?=h($row['loan'])?>"><?=h($row['loan'])?></a></th>
+        	  <td><a href="refine.php?column=loan&text=<?=h($row['status'])?>"><?=h($row['status'])?></a></th>
         	  <td><a href="refine.php?column=borrower&text=<?=h($row['borrower'])?>"><?=h($row['borrower'])?></a></th>
           </tr>
         <?php 
