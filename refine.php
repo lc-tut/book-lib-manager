@@ -43,7 +43,7 @@
           <th>出版</th>
           <th>ジャンル</th>
           <th>貸出状況</th>
-          <th>借用者</th>
+          <th>所在・借用者</th>
         </tr>
       </thead>
       <tbody>
@@ -55,7 +55,7 @@
           		  <td><a href="refine.php?column=author&text=<?=$h($row['author'])?>"><?=$h($row['author'])?></a></th>
           		  <td><a href="refine.php?column=publisher&text=<?=$h(['publisher'])?>"><?=$h($row['publisher'])?></a></th>
           		  <td><a href="refine.php?column=genre&text=<?=$h($row['genre'])?>"><?=$h($row['genre'])?></a></th>
-          		  <td><a href="refine.php?column=loan&text=<?=$h($row['loan'])?>"><?=$h($row['loan'])?></a></th>
+          		  <td><a href="refine.php?column=loan&text=<?=$h($row['status'])?>"><?=$h($row['status'])?></a></th>
           		  <td><a href="refine.php?column=borrower&text=<?=$h($row['borrower'])?>"><?=$h($row['borrower'])?></a></th>
               </tr>
             <?php
