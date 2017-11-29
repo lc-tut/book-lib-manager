@@ -25,3 +25,27 @@ https://qiita.com/tabo_purify/items/2575a58c54e43cd59630
     borrower (借用者)
     date_time (手続き日時 UTCタイムスタンプ)
     dc (return borrow new delete)
+
+create table books (
+    ID int(3) unsigned zerofill not null auto_increment primary key,
+    ISBN bigint(15) not null ,
+    title varchar(240) collate utf8mb4_general_ci not null,
+    author varchar(240) collate utf8mb4_general_ci not null,
+    publisher varchar(100) collate utf8mb4_general_ci not null,
+    genre varchar(100) collate utf8mb4_general_ci not null,
+    status varchar(10) collate utf8mb4_general_ci not null default 'clubroom',
+    borrower varchar(20) collate utf8mb4_general_ci
+) engine=InnoDB collate utf8mb4_general_ci;
+
+PHP message: PHP Warning:  PDO::exec() expects parameter 1 to be string, object given in /home/user/web/loan-manager/add_data.php on line 24
+
+CREATE TABLE 1234567890(ID int(3) unsignd zerofill not null auto_increment primary key, borrower varchar(10), date_time timestamp NOT NULL default current_timestamp, dc varchar(6) NOT NULL);
+
+CREATE TABLE 1234567890(
+ID int(3) unsigned zerofill NOT NULL AUTO_INCREMENT PRIMARY KEY,
+borrower varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
+date_time timestamp NOT NULL DEFAULT current_timestamp,
+dc varchar(6) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB COLLATE utf8mb4_general_ci
+
+CREATE TABLE `'.$isbn.'`( ID int(3) unsigned zerofill  NOT NULL AUTO_INCREMENT PRIMARY KEY, borrower varchar(10) COLLATE utf8mb4_general_ci NOT NULL, date_time timestamp NOT NULL DEFAULT current_timestamp, dc varchar(6) COLLATE utf8mb4_general_ci NOT NULL ) ENGINE=InnoDB COLLATE utf8mb4_general_ci;
