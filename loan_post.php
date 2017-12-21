@@ -27,7 +27,7 @@
       $stmt->bindValue(2, $ID, PDO::PARAM_STR);
       $stmt->bindValue(3, $ISBN, PDO::PARAM_STR);
       $stmt->execute();
-      $sql = 'insert into `'.$ISBN.'` `borrower` = ?, `dc` = ?';
+      $sql = 'insert into `'.$ISBN.'` (`borrower` , dc) values (?, ?)';
       $stmt = $dbh->prepare($sql);
       $stmt->bindValue(1, $ID, PDO::PARAM_STR);
       $stmt->bindValue(2, "貸出", PDO::PARAM_STR);
