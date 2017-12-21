@@ -32,6 +32,7 @@
       $stmt->bindValue(1, $ID, PDO::PARAM_STR);
       $stmt->bindValue(2, "貸出", PDO::PARAM_STR);
       $stmt->execute();
+      $sql = 'select title from `books` where ISBN like '$ISBN''
       $dbh = null;
 
       #$dbu = getUser();
@@ -81,7 +82,7 @@
       #$stmt->execute();
       #$dbu = null;
 
-      echo "貸出処理が完了しました。<br>";
+      echo "返却処理が完了しました。<br>";
       echo "<a href=\"./\">リストに戻る</a>";
     }
     catch (Exception $e) {
@@ -89,6 +90,5 @@
       echo "<br><a href=\"./\">リストに戻る</a>";
       die();
     }
-
   }
 ?>

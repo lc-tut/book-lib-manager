@@ -24,6 +24,7 @@
       </form>
     </li>
       <li class="func_add"><input type="button" value="蔵書追加" onclick="location.href='input.html'" /></li>
+      <li class="func_add"><input type="button" value="貸出・返却" onclick="location.href='loan.html'" /></li>
     </ul>
     <?php
       try{

@@ -26,6 +26,8 @@ https://qiita.com/tabo_purify/items/2575a58c54e43cd59630
     date_time (手続き日時 UTCタイムスタンプ)
     dc (return borrow new delete)
 
+
+
 create table books (
     ID int(3) unsigned zerofill not null auto_increment primary key,
     ISBN bigint(15) not null ,
@@ -36,6 +38,15 @@ create table books (
     status varchar(10) collate utf8mb4_general_ci not null default 'clubroom',
     borrower varchar(20) collate utf8mb4_general_ci
 ) engine=InnoDB collate utf8mb4_general_ci;
+
+各部員 table
+    ID (学生ID)
+    product (借りたもの)
+    date (借りた日時)
+
+'CREATE TABLE `'.$ID.'`( ID varchar(10) NOT NULL PRIMARY KEY, product varchar(100) COLLATE utf8mb4_general_ci NOT NULL, date_time datetime NOT NULL DEFAULT current_timestamp) ENGINE=InnoDB COLLATE utf8mb4_general_ci;'
+
+
 
 PHP message: PHP Warning:  PDO::exec() expects parameter 1 to be string, object given in /home/user/web/loan-manager/add_data.php on line 24
 
@@ -49,3 +60,5 @@ dc varchar(6) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB COLLATE utf8mb4_general_ci
 
 CREATE TABLE `'.$isbn.'`( ID int(3) unsigned zerofill  NOT NULL AUTO_INCREMENT PRIMARY KEY, borrower varchar(10) COLLATE utf8mb4_general_ci NOT NULL, date_time timestamp NOT NULL DEFAULT current_timestamp, dc varchar(6) COLLATE utf8mb4_general_ci NOT NULL ) ENGINE=InnoDB COLLATE utf8mb4_general_ci;
+
+select title from `books` where ISBN like '9784798050959'
