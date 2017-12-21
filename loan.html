@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>貸出・返却</title>
+  </head>
+  <body>
+    <h1>貸出・返却</h1>
+    <br>
+      
+    <form method="post" action="loan_post.php">
+      貸出・返却:
+      <br>
+      <input type="radio" name="dc" value="貸出">
+      <input type="radio" name="dc" value="返却">
+      <br>
+      学籍番号:
+      <br>
+      <input type="text" name="ID" size="150" value="">
+      <br>
+      ISBN:
+      <input type="text" name="ISBN" size="150" value="">
+      <br>
+      <br>
+      <input type="submit" value="登録">
+    </form>
+  </body>
+</html>
