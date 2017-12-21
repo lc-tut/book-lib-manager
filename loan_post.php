@@ -7,7 +7,7 @@
     if(strlen($_POST['ID']) != 10) throw new Exception('学生IDが不正です。'.h($_POST['ID']));
     else $ID = $_POST['ID'];
     if($_POST['dc'] != "loan" && $_POST['dc'] != "return") throw new Exception('貸出返却の選択が不正です。'.h($_POST['dc']));
-    else $dc = $_POST['DC'];
+    else $dc = $_POST['dc'];
   }
   catch(Exception $e){
     echo "エラーが発生しました: " . h($e->getMessage()) . "";
