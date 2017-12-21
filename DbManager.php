@@ -1,9 +1,9 @@
 <?php
 
 function getDb() {
-  $dsn = 'mysql:dbname=<データベース名>; host=127.0.0.1';
-  $usr = '<データベースのユーザー名>';
-  $passwd = '<データベースのパスワード>';
+  $dsn = 'mysql:dbname=lclib; host=127.0.0.1';
+  $usr = 'user';
+  $passwd = 'pass';
 
   try {
     $db = new PDO($dsn, $usr, $passwd);
