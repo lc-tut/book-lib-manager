@@ -6,7 +6,7 @@
     else $ISBN = $_POST['ISBN'];
     if(strlen($_POST['ID']) != 10) throw new Exception('学生IDが不正です。'.h($_POST['ID']));
     else $ID = $_POST['ID'];
-    if($_POST['dc'] != '貸出' || $_POST['dc'] != '返却') throw new Exception('貸出返却の選択が不正です。'.h($_POST['dc']));
+    if($_POST['dc'] != "貸出" || $_POST['dc'] != "返却") throw new Exception('貸出返却の選択が不正です。'.h($_POST['dc']));
     else $dc = $_POST['DC'];
   }
   catch(Exception $e){
