@@ -13,6 +13,7 @@
     echo "エラーが発生しました: " . h($e->getMessage()) . "";
     echo "<br><a href=\"./loan.html\">貸出・返却に戻る</a>";
     die();
+
   }
  
 #  try {
