@@ -58,12 +58,13 @@
       $dbh = getDb();
       $dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
       $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $sql = "UPDATE books SET `status` = `?`, `borrower` = `?` WHERE ISBN = ?";
+      $sql = "UPDATE books SET `status` = ?, `borrower` = ? WHERE ISBN = ?";
       $stmt = $dbh->prepare($sql);
       $stmt->bindValue(1, '部室内書庫', PDO::PARAM_STR);
-      $stmt->bindValue(2, $ISBN, PDO::PARAM_STR);
+      $stmt->bindValue(2, '部室', PDO::PARAM_STR);
+      $stmt->bindValue(3, $ISBN, PDO::PARAM_STR);
       $stmt->execute();
-      $sql = 'insert into `'.$ISBN.'` `borrower` = `?`, `dc` = `?`';
+      $sql = 'insert into `'.$ISBN.'` (`borrower` , dc) values (?, ?)';
       $stmt = $dbh->prepare($sql);
       $stmt->bindValue(1, $ID, PDO::PARAM_STR);
       $stmt->bindValue(2, "返却", PDO::PARAM_STR);
