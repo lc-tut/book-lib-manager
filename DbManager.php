@@ -3,7 +3,7 @@
 function getDb() {
   $dsn = 'mysql:dbname=lclib; host=127.0.0.1';
   $usr = 'user';
-  $passwd = 'pass';
+  $passwd = 'password';
 
   try {
     $db = new PDO($dsn, $usr, $passwd);
