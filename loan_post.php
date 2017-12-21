@@ -2,11 +2,11 @@
   require_once 'DbManager.php';
   require_once 'UserManager.php';
   try{
-    if(strlen($_POST['ISBN']) != 13) throw new Exception('ISBNが不正です。');
+    if(strlen($_POST['ISBN']) != 13) throw new Exception('ISBNが不正です。'.h($_POST['ISBN']));
     else $ISBN = $_POST['ISBN'];
-    if(strlen($_POST['ID']) != 10) throw new Exception('学生IDが不正です。');
+    if(strlen($_POST['ID']) != 10) throw new Exception('学生IDが不正です。'.h($_POST['ID']));
     else $ID = $_POST['ID'];
-    if($_POST['dc'] != '貸出' || $_POST['dc'] != '返却') throw new Exception('貸出返却の選択が不正です。');
+    if($_POST['dc'] != '貸出' || $_POST['dc'] != '返却') throw new Exception('貸出返却の選択が不正です。'.h($_POST[dc]));
     else $dc = $_POST['DC'];
   }
   catch(Exception $e){
