@@ -17,8 +17,6 @@
   echo h($ID)."\n".h($ISBN)."\n".h($dc);
  
 #  try {
-#    if (empty($_POST['ISBN'])) throw new Exception('ISBNが指定されていません。');
-#    $ID = (int) $_POST['ISBN'];
 #    $dbh = getDb();
 #    $dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 #    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
