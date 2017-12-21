@@ -1,6 +1,6 @@
 <?php
 
-function getDb() {
+function getUser() {
   $dsn = 'mysql:dbname=lc_user; host=127.0.0.1';
   $usr = 'user';
   $passwd = 'password';
