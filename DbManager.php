@@ -1,8 +1,8 @@
 <?php
 
 function getDb() {
-  $dsn = 'mysql:dbname=lclib; host=127.0.0.1';
-  $usr = 'user';
+  $dsn = 'mysql:dbname=lclib2; host=localhost';
+  $usr = 'root';
   $passwd = 'password';
 
   try {

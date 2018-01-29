@@ -22,7 +22,7 @@ create table books (
     author varchar(240) collate utf8mb4_general_ci not null,
     publisher varchar(100) collate utf8mb4_general_ci not null,
     status varchar(10) collate utf8mb4_general_ci not null,
-    borrower varchar(20) collate utf8mb4_general_ci not null
+    borrower varchar(20) collate utf8mb4_general_cill
 ) engine=InnoDB collate utf8mb4_general_ci;
 
 https://qiita.com/tabo_purify/items/2575a58c54e43cd59630

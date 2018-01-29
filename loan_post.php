@@ -35,16 +35,6 @@
       $sql = 'select title from `books` where ISBN like \'$ISBN\'';
       $dbh = null;
 
-      #$dbu = getUser();
-      #$dbu->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-      #$dbu->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      #$sql = "UPDATE books SET `status` = `?`, `borrower` = `?` WHERE ISBN = ?";
-      #$stmt = $dbu->prepare($sql);
-      #$stmt->bindValue(1, '貸出中', PDO::PARAM_STR);
-      #$stmt->bindValue(2, '部室内書庫', PDO::PARAM_STR);
-      #$stmt->execute();
-      #$dbu = null;
-
       echo "貸出処理が完了しました。<br>";
       echo "<a href=\"./\">リストに戻る</a>";
     }
@@ -71,16 +61,6 @@
       $stmt->bindValue(2, "返却", PDO::PARAM_STR);
       $stmt->execute();
       $dbh = null;
-
-      #$dbu = getUser();
-      #$dbu->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-      #$dbu->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      #$sql = "UPDATE books SET `status` = `?`, `borrower` = `?` WHERE ISBN = ?";
-      #$stmt = $dbu->prepare($sql);
-      #$stmt->bindValue(1, '貸出中', PDO::PARAM_STR);
-      #$stmt->bindValue(2, '部室内書庫', PDO::PARAM_STR);
-      #$stmt->execute();
-      #$dbu = null;
 
       echo "返却処理が完了しました。<br>";
       echo "<a href=\"./\">リストに戻る</a>";
