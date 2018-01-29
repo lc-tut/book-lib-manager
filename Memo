@@ -1,73 +1,47 @@
-書籍データ
-    books table
-
-利用データ
-    history table
-
-利用者データ
-    user table
-
-books table
-    ISBN (ISBN)
-    title (書籍名)
-    author (著者)
-    publisher (出版社)
-    genre (ジャンル)
-    status (貸し出し状況) (clubroom lending)
-    borrower (借用者)
-
-create table books (
-    ID int(3) unsigned zerofill not null auto_increment primary key,
+書籍テーブル
+    ISBN
+    書籍名
+    著者
+    出版社
+    ジャンル
+    貸出状況
+    借用者 所在
+    
+create table books(
+    ISBN bigint(13) unsigned not null primary key,
     title varchar(240) collate utf8mb4_general_ci not null,
     author varchar(240) collate utf8mb4_general_ci not null,
-    publisher varchar(100) collate utf8mb4_general_ci not null,
+    publisher varchar(240) collate utf8mb4_general_ci not null,
+    genre varchar(50) collate utf8mb4_general_ci not null,
     status varchar(10) collate utf8mb4_general_ci not null,
-    borrower varchar(20) collate utf8mb4_general_cill
+    borrower varchar(8)
 ) engine=InnoDB collate utf8mb4_general_ci;
 
-https://qiita.com/tabo_purify/items/2575a58c54e43cd59630
 
+履歴テーブル
+    ID
+    日時
+    ISBN
+    処理者
+    処理内容(新規・貸出・返却・編集・削除)
 
-
-各書籍 table
-    ID (添字)
-    borrower (借用者)
-    date_time (手続き日時 UTCタイムスタンプ)
-    dc (return borrow new delete)
-
-
-
-create table books (
-    ID int(3) unsigned zerofill not null auto_increment primary key,
-    ISBN bigint(15) not null ,
-    title varchar(240) collate utf8mb4_general_ci not null,
-    author varchar(240) collate utf8mb4_general_ci not null,
-    publisher varchar(100) collate utf8mb4_general_ci not null,
-    genre varchar(100) collate utf8mb4_general_ci not null,
-    status varchar(10) collate utf8mb4_general_ci not null default 'clubroom',
-    borrower varchar(20) collate utf8mb4_general_ci
+create table history(
+    ID int(5) unsigned zerofill not null auto_increment primary key,
+    date_time timestamp not null default current_timestamp,
+    ISBN bigint(13) unsigned not null,
+    processer varchar(8) collate utf8mb4_general_ci not null,
+    process varchar(2) collate utf8mb4_general_ci
 ) engine=InnoDB collate utf8mb4_general_ci;
 
-各部員 table
-    ID (学生ID)
-    product (借りたもの)
-    date (借りた日時)
-
-'CREATE TABLE `'.$ID.'`( ID varchar(10) NOT NULL PRIMARY KEY, product varchar(100) COLLATE utf8mb4_general_ci NOT NULL, date_time datetime NOT NULL DEFAULT current_timestamp) ENGINE=InnoDB COLLATE utf8mb4_general_ci;'
 
 
+ユーザーテーブル
+    ID
+    StudentID
+    氏名
 
-PHP message: PHP Warning:  PDO::exec() expects parameter 1 to be string, object given in /home/user/web/loan-manager/add_data.php on line 24
-
-CREATE TABLE 1234567890(ID int(3) unsignd zerofill not null auto_increment primary key, borrower varchar(10), date_time timestamp NOT NULL default current_timestamp, dc varchar(6) NOT NULL);
-
-CREATE TABLE 1234567890(
-ID int(3) unsigned zerofill NOT NULL AUTO_INCREMENT PRIMARY KEY,
-borrower varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
-date_time timestamp NOT NULL DEFAULT current_timestamp,
-dc varchar(6) COLLATE utf8mb4_general_ci NOT NULL
-) ENGINE=InnoDB COLLATE utf8mb4_general_ci
-
-CREATE TABLE `'.$isbn.'`( ID int(3) unsigned zerofill  NOT NULL AUTO_INCREMENT PRIMARY KEY, borrower varchar(10) COLLATE utf8mb4_general_ci NOT NULL, date_time timestamp NOT NULL DEFAULT current_timestamp, dc varchar(6) COLLATE utf8mb4_general_ci NOT NULL ) ENGINE=InnoDB COLLATE utf8mb4_general_ci;
-
-select title from `books` where ISBN like '9784798050959'
+create table lc_user(
+    ID int(5) unsigned zerofill not null auto_increment primary key,
+    studentID varchar(8) not null,
+    name varchar(15) collate utf8mb4_general_ci
+) engine=InnoDB collate utf8mb4_general_ci;

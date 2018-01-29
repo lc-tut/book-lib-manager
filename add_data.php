@@ -6,7 +6,7 @@
     else{
       $db = getDb();
   
-      $stt = $db->prepare('INSERT INTO books(ID, ISBN, title, author, publisher, genre, status, borrower)VALUES(NULL, :ISBN, :title, :author, :publisher, :genre, :status, :borrower)');
+      $stt = $db->prepare('INSERT INTO books(ISBN, title, author, publisher, genre, status, borrower)VALUES(:ISBN, :title, :author, :publisher, :genre, :status, :borrower)');
   
       $stt -> bindValue(':ISBN', $_POST['ISBN']);
       $stt -> bindValue(':title', $_POST['title']);
@@ -15,6 +15,17 @@
       $stt -> bindValue(':genre', $_POST['genre']);
       $stt -> bindValue(':status', "部室内書庫");
       $stt -> bindValue(':borrower', "部室");
+  
+      $stt -> execute();
+      $db = NULL;
+
+      $db = getDb();
+  
+      $stt = $db->prepare('INSERT INTO history(ID, date_time, ISBN, processer, process)VALUES(NULL, NULL, :ISBN, :processer, :process)');
+  
+      $stt -> bindValue(':ISBN', $_POST['ISBN']);
+      $stt -> bindValue(':processer', 'system');
+      $stt -> bindValue(':process', '新規');
   
       $stt -> execute();
       $db = NULL;
