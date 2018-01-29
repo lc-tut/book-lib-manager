@@ -1,3 +1,12 @@
+書籍データ
+    books table
+
+利用データ
+    history table
+
+利用者データ
+    user table
+
 books table
     ISBN (ISBN)
     title (書籍名)

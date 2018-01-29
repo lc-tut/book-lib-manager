@@ -32,7 +32,7 @@
       $stmt->bindValue(1, $ID, PDO::PARAM_STR);
       $stmt->bindValue(2, "貸出", PDO::PARAM_STR);
       $stmt->execute();
-      $sql = 'select title from `books` where ISBN like '$ISBN''
+      $sql = 'select title from `books` where ISBN like \'$ISBN\'';
       $dbh = null;
 
       #$dbu = getUser();
