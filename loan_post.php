@@ -54,7 +54,7 @@
       $sql = "UPDATE books SET `status` = ?, `borrower` = ? WHERE ISBN = ?";
       $stmt = $dbh->prepare($sql);
       $stmt->bindValue(1, '部室内書庫', PDO::PARAM_STR);
-      $stmt->bindValue(2, $ID, PDO::PARAM_STR);
+      $stmt->bindValue(2, '貸出可能', PDO::PARAM_STR);
       $stmt->bindValue(3, $ISBN, PDO::PARAM_STR);
       $stmt->execute();
       $sql = "insert into `history` (ID, date_time, ISBN, processer, process) values (?, ?, ?, ?, ?)";
