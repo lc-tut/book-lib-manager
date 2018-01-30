@@ -1,11 +1,11 @@
 <?php
   require_once 'DbManager.php';
   require_once 'UserManager.php';
+  require_once 'FelicaReader.php';
   try{
-    if(strlen($_POST['ISBN']) != 13) throw new Exception('ISBNが不正です。'.h($_POST['ISBN']));
+    if(strlen($ID) != 10) throw new Exception('学生証の読み取りができませんでした'.h($ID));
+    if(strlen($_POST['ISBN']) != 13) throw new Exception('ISBNが不正です'.h($_POST['ISBN']));
     else $ISBN = $_POST['ISBN'];
-    if(strlen($_POST['ID']) != 10) throw new Exception('学生IDが不正です。'.h($_POST['ID']));
-    else $ID = $_POST['ID'];
     if($_POST['dc'] != "loan" && $_POST['dc'] != "return") throw new Exception('貸出返却の選択が不正です。'.h($_POST['dc']));
     else $dc = $_POST['dc'];
   }
@@ -27,12 +27,14 @@
       $stmt->bindValue(2, $ID, PDO::PARAM_STR);
       $stmt->bindValue(3, $ISBN, PDO::PARAM_STR);
       $stmt->execute();
-      $sql = 'insert into `'.$ISBN.'` (`borrower` , dc) values (?, ?)';
+      $sql = "insert into `history` (ID, date_time, ISBN, processer, process) values (?, ?, ?, ?, ?)";
       $stmt = $dbh->prepare($sql);
-      $stmt->bindValue(1, $ID, PDO::PARAM_STR);
-      $stmt->bindValue(2, "貸出", PDO::PARAM_STR);
+      $stmt->bindValue(1, NULL, PDO::PARAM_STR);
+      $stmt->bindValue(2, NULL, PDO::PARAM_STR);
+      $stmt->bindValue(3, $ISBN, PDO::PARAM_STR);
+      $stmt->bindValue(4, $ID, PDO::PARAM_STR);
+      $stmt->bindValue(5, "貸出", PDO::PARAM_STR);
       $stmt->execute();
-      $sql = 'select title from `books` where ISBN like \'$ISBN\'';
       $dbh = null;
 
       echo "貸出処理が完了しました。<br>";
@@ -52,13 +54,16 @@
       $sql = "UPDATE books SET `status` = ?, `borrower` = ? WHERE ISBN = ?";
       $stmt = $dbh->prepare($sql);
       $stmt->bindValue(1, '部室内書庫', PDO::PARAM_STR);
-      $stmt->bindValue(2, '部室', PDO::PARAM_STR);
+      $stmt->bindValue(2, $ID, PDO::PARAM_STR);
       $stmt->bindValue(3, $ISBN, PDO::PARAM_STR);
       $stmt->execute();
-      $sql = 'insert into `'.$ISBN.'` (`borrower` , dc) values (?, ?)';
+      $sql = "insert into `history` (ID, date_time, ISBN, processer, process) values (?, ?, ?, ?, ?)";
       $stmt = $dbh->prepare($sql);
-      $stmt->bindValue(1, $ID, PDO::PARAM_STR);
-      $stmt->bindValue(2, "返却", PDO::PARAM_STR);
+      $stmt->bindValue(1, NULL, PDO::PARAM_STR);
+      $stmt->bindValue(2, NULL, PDO::PARAM_STR);
+      $stmt->bindValue(3, $ISBN, PDO::PARAM_STR);
+      $stmt->bindValue(4, $ID, PDO::PARAM_STR);
+      $stmt->bindValue(5, "返却", PDO::PARAM_STR);
       $stmt->execute();
       $dbh = null;
 

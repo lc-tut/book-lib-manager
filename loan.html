@@ -7,6 +7,7 @@
   <body>
     <h1>貸出・返却</h1>
     <br>
+    貸出・返却を選択したら、Felicaポートに学生証をかざして本のISBNバーコード(上のやつ)をスキャンして下さい。
       
     <form method="post" action="loan_post.php">
       貸出・返却:
@@ -15,16 +16,9 @@
       <br>
       返却<input type="radio" name="dc" value="return">
       <br>
-      学籍番号:
+      ISBN<input type="text" name="ISBN" value="">
       <br>
-      <input type="text" name="ID" size="150" value="">
-      <br>
-      ISBN:
-      <br>
-      <input type="text" name="ISBN" size="150" value="">
-      <br>
-      <br>
-      <input type="submit" value="登録">
+      <input type="submit" value="次へ">
     </form>
   </body>
 </html>
