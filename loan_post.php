@@ -3,7 +3,7 @@
   require_once 'UserManager.php';
   require_once 'FelicaReader.php';
   try{
-    if(strlen($ID) != 10) throw new Exception('学生証の読み取りができませんでした'.h($ID));
+    if(strlen($ID) != 8) throw new Exception('学生証の読み取りができませんでした'.h($ID));
     if(strlen($_POST['ISBN']) != 13) throw new Exception('ISBNが不正です'.h($_POST['ISBN']));
     else $ISBN = $_POST['ISBN'];
     if($_POST['dc'] != "loan" && $_POST['dc'] != "return") throw new Exception('貸出返却の選択が不正です。'.h($_POST['dc']));
