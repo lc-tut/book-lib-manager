@@ -15,5 +15,5 @@
         die('接続エラー：' .$Exception->getMessage());
       }
       $row = $stmh->fetch(PDO::FETCH_ASSOC);
-      echo var_dump($row);
+      echo var_dump($row[0]);
 ?>
