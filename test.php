@@ -14,5 +14,5 @@
       }catch(PDOException $Exception){
         die('接続エラー：' .$Exception->getMessage());
       }
-      echo var_dump($stmh);
+      echo var_dump($row = $stmh->fetch(PDO::FETCH_ASSOC));
 ?>
