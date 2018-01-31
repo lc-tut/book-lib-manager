@@ -21,6 +21,7 @@
       $stmh = $db->prepare($sql);
       $stmh->execute();
       $status = $stmh->fetch(PDO::FETCH_ASSOC);
+      echo $status['status'];
       if($status['status'] != '貸出可能') throw new Exception("この書籍は現在貸出中となっています。");
       $sql = "UPDATE books SET `status` = ?, `borrower` = ? WHERE ISBN = ?";
       $stmt = $db->prepare($sql);
