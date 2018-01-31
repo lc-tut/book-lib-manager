@@ -27,4 +27,8 @@ function h($s) {
   return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 }
 
+function br(){
+  echo nl2br("\n");
+}
+
 ?>

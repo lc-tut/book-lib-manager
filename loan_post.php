@@ -13,7 +13,7 @@
     echo "<br><a href=\"./loan.html\">貸出・返却に戻る</a>";
     die();
   }
-  echo h($ID).'\n'.h($ISBN).'\n'.h($dc);
+  echo "学籍番号: ".h($ID)."<br>ISBN:".h($ISBN).'<br>';
 
   if($dc == 'loan'){
     try {
