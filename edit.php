@@ -3,9 +3,6 @@
   require_once 'DbManager.php'; 
   
   try { 
-  
-    $db = getDb();
-    
     if (empty($_GET['isbn'])) throw new Exception("ISBNが指定されていません");
     $ISBN = (int) $_GET['isbn'];
     if(mb_strlen($ISBN) != 13) throw new Exception("ISBNが間違っている可能性があります。");

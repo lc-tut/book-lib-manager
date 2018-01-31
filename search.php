@@ -15,14 +15,7 @@
   </head>
   <body>
     <?php
-      try{
-        require_once 'DbManager.php';
-        $db = getDb();
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-      }catch(PDOException $Exception){
-        die('接続エラー：' .$Exception->getMessage());
-      }
+      require_once 'DbManager.php';
       try{
         if(empty($_GET['keyword'])) throw new Exception("検索キーワードが入力されていません");
         $char = $_GET['keyword'];

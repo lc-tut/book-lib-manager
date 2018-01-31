@@ -28,14 +28,7 @@
       <li class="func_add"><input type="button" value="貸出・返却" onclick="location.href='loan.html'" /></li>
     </ul>
     <?php
-      try{
-        require_once 'DbManager.php';
-        $db = getDb();
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-      }catch(PDOException $Exception){
-        die('接続エラー：' .$Exception->getMessage());
-      }
+      require_once 'DbManager.php';
       try{
         $sql = "SELECT * FROM books ORDER BY title ASC";
         $stmh = $db->prepare($sql);

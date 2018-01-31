@@ -15,14 +15,7 @@
     </head>
   <body>
     <?php
-    try{
-      require_once 'DbManager.php';
-      $db = getDb();
-      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-    }catch(PDOException $Exception){
-      die('接続エラー：' .$Exception->getMessage());
-    }
+    require_once 'DbManager.php';
     try{
       $column = $_GET['column'];
       $char = $_GET['text'];

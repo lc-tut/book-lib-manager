@@ -4,7 +4,6 @@
   
     if(strlen($_POST['ISBN']) != 13) throw new Exception("ISBNが正しくありません。");
     else{
-      $db = getDb();
   
       $stt = $db->prepare('INSERT INTO books(ISBN, title, author, publisher, genre, status, borrower)VALUES(:ISBN, :title, :author, :publisher, :genre, :status, :borrower)');
   
