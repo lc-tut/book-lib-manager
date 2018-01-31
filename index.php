@@ -27,9 +27,7 @@
       <li class="func_add"><input type="button" value="貸出・返却" onclick="location.href='loan.html'" /></li>
     </ul>
     <?php
-    ini_set('error_reporting', E_ALL);
       require_once 'DbManager.php';
-      echo var_dump($db);
       try{
         $sql = "SELECT * FROM books ORDER BY title ASC";
         $stmh = $db->prepare($sql);
