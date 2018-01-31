@@ -28,6 +28,7 @@
     </ul>
     <?php
       require_once 'DbManager.php';
+      echo var_dump($db);
       try{
         $sql = "SELECT * FROM books ORDER BY title ASC";
         $stmh = $db->prepare($sql);
