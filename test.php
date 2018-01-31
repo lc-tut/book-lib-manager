@@ -33,8 +33,10 @@
       }catch(PDOException $Exception){
         die('接続エラー：' .$Exception->getMessage());
       }
+
+      $books_data = array();
       while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
-        $userData[]=array(
+        $books_data[]=array(
         'ISBN'=>$row['ISBN'],
         'title'=>$row['title'],
         'author'=>$row['author'],
