@@ -1,4 +1,5 @@
 <?php
+      /*
       try{
         require_once 'DbManager.php';
         $db = getDb();
@@ -17,6 +18,7 @@
       $row = $stmh->fetch(PDO::FETCH_ASSOC);
       echo $row['status'];
       $db = null;
+      */
 
       try{
         require_once 'DbManager.php';
@@ -45,6 +47,7 @@
         'status'=>$row['status'],
         'borrower'=>$row['borrower']
         );
+    $db = null;
     }
     header('Content-type: application/json');
     echo json_encode($books_data);
