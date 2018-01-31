@@ -17,7 +17,7 @@
 
   if($dc == 'loan'){
     try {
-      $sql = "select status from books where ISBN like '.$ISBN.'";
+      $sql = "select status from books where ISBN like '$ISBN'";
       $stmh = $db->prepare($sql);
       $stmh->execute();
       $status = $stmh->fetch(PDO::FETCH_ASSOC);
@@ -50,7 +50,7 @@
   }
   else if($dc == 'return'){
     try {
-      $sql = "select status from books where ISBN like '.$ISBN.'";
+      $sql = "select status from books where ISBN like '$ISBN'";
       $stmh = $db->prepare($sql);
       $stmh->execute();
       $status = $stmh->fetch(PDO::FETCH_ASSOC);
