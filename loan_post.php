@@ -21,7 +21,7 @@
       $stmh = $db->prepare($sql);
       $stmh->execute();
       $status = $stmh->fetch(PDO::FETCH_ASSOC);
-      if($status != '貸出可能') throw new Exception("この書籍は現在貸出中となっています。");
+      if($status['status'] != '貸出可能') throw new Exception("この書籍は現在貸出中となっています。");
       $sql = "UPDATE books SET `status` = ?, `borrower` = ? WHERE ISBN = ?";
       $stmt = $db->prepare($sql);
       $stmt->bindValue(1, '貸出中', PDO::PARAM_STR);
@@ -53,7 +53,7 @@
       $stmh = $db->prepare($sql);
       $stmh->execute();
       $status = $stmh->fetch(PDO::FETCH_ASSOC);
-      if($status == '貸出可能') throw new Exception("この書籍は貸し出されておりません。");
+      if($status['status'] == '貸出可能') throw new Exception("この書籍は貸し出されておりません。");
       $sql = "UPDATE books SET `status` = ?, `borrower` = ? WHERE ISBN = ?";
       $stmt = $db->prepare($sql);
       $stmt->bindValue(1, '貸出可能', PDO::PARAM_STR);
