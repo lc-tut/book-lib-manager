@@ -20,8 +20,8 @@ try{
      $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
    }catch(PDOException $Exception){
      die('接続エラー：' .$Exception->getMessage());
-   }
 }
+
 
 function h($s) {
   return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
