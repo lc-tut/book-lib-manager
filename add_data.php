@@ -12,8 +12,8 @@
       $stt -> bindValue(':author', $_POST['author']);
       $stt -> bindValue(':publisher', $_POST['publisher']);
       $stt -> bindValue(':genre', $_POST['genre']);
-      $stt -> bindValue(':status', "部室内書庫");
-      $stt -> bindValue(':borrower', "部室");
+      $stt -> bindValue(':status', "貸出可能");
+      $stt -> bindValue(':borrower', "部室内書庫");
   
       $stt -> execute();
       $db = NULL;
