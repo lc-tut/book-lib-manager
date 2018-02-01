@@ -4,29 +4,13 @@
   </head>
   <body>
     <h1>一般書籍情報登録</h1>
-    <form method = "POST" action = "add_data.php">
+    <p>版元ドットコムの書誌データより書籍情報を検索します。テキストボックスにフォーカスしてISBNバーコード(本後側の一番上のバーコード)をスキャンして下さい。</p>
+    <form method = "GET" action = "input.php">
       ISBN:
       <br>
-      <input type = "text" name = "ISBN" value = "" size = "150">
+      <input type = "text" name = "isbn" value = "" size = "150">
       <br>
-      タイトル:
-      <br>
-      <input type = "text" name = "title" value = "" size = "150">
-      <br>
-      著者:
-      <br>
-      <input type = "text" name = "author" value = "" size = "150">
-      <br>
-      出版者:
-      <br>
-      <input type = "text" name = "publisher" value = ""  size = "150">
-      <br>
-      ジャンル:
-      <br>
-      <input type = "text" name = "genre" value = "" size = "150">
-      <br>
-      <br>
-      <input type = "submit" value = "登録">
+      <input type = "submit" value = "次へ">
     </form>
   </body>
 </html>
