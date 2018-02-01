@@ -25,7 +25,7 @@ try{
 
     <body>
     <h1>一般書籍情報登録</h1>
-    <form method = "POST" action = "insert_data.php">
+    <form method = "POST" action = "add_data.php">
     <p>
     ISBN:<br>
     <input type = "text" name = isbn value = "'.$isbn.'" size = "150">
