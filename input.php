@@ -1,7 +1,7 @@
 <?php
 try{
     if(mb_strlen($_GET['isbn']) != 13) throw new Exception("ISBNが不正です。");
-    $isbn = $_GET['isbn']
+    $isbn = $_GET['isbn'];
     $API_XML = simplexml_load_file("http://www.hanmoto.com/api/book.php?ISBN=$isbn");
 
     $json = json_encode($API_XML);
