@@ -28,7 +28,7 @@ try{
     <form method = "POST" action = "add_data.php">
     <p>
     ISBN:<br>
-    <input type = "text" name = isbn value = "'.$isbn.'" size = "150">
+    <input type = "text" name = "ISBN" value = "'.$isbn.'" size = "150">
     </p><p>
     タイトル:<br>
     <input type = "text" name = "title" value = "'.$title.'" size = "150">
