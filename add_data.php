@@ -30,7 +30,7 @@
       $db = NULL;
       print "<html><head><title>処理終了</title></head><body><p>登録が完了しました。</p><a href=\"./\">リスト戻る</a></body></html>";
     }
-  }catch(PDOException $e){
+  }catch(Exception $e){
       echo("<html><head><title>エラー</title></head><body><p>登録に失敗しました。エラーを確認して下さい。</p><a href=\"./input.html\">登録画面に戻る</a></body></html>");
     die("error:{$e->getMessage()}");
   }
