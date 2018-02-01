@@ -1,16 +1,4 @@
 <?php
-     # require_once 'DbManager.php';
-     # try{
-     #   $sql = "select status from books where ISBN like '9784791960279';";
-     #   $stmh = $db->prepare($sql);
-     #   $stmh->execute();
-     # }catch(PDOException $Exception){
-     #   die('接続エラー：' .$Exception->getMessage());
-     # }
-     # $row = $stmh->fetch(PDO::FETCH_ASSOC);
-     # echo $row['status'];
-     # $db = null;
-
       require_once 'DbManager.php';
       try{
         $sql = "select * from books";
