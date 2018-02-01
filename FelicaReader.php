@@ -1,6 +1,6 @@
 <?php
 
-$result = `felica_dump`;
+$result = `sudo felica_dump`;
 
 preg_match('/006A:0000.*/', $result, $match);
 
