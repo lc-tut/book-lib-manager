@@ -67,7 +67,11 @@ $openbd_data = json_decode(file_get_contents("https://api.openbd.jp/v1/get?isbn=
             <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Extent[0]->ExtentValue)?></td>
         </tr>
         <tr>
-            <td>出版社</td>
+            <td>出版</td>
+            <td><?php he($openbd_data[0]->onix->PublishingDetail->Imprint->ImprintName)?></td>
+        </tr>
+        <tr>
+            <td>発行所</td>
             <td><?php he($openbd_data[0]->onix->PublishingDetail->Publisher->PublisherName)?></td>
         </tr>
         <tr>
