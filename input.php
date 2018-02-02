@@ -22,21 +22,21 @@ try{
     <form method = "POST" action = "add_data.php">
     <p>
     ISBN:<br>
-    <input type = "text" name = "ISBN" value = "'.$isbn.'" size = "150">
+    <input type = "text" required name = "ISBN" value = "'.$isbn.'" size = "150">
     </p><p>
     タイトル:<br>
-    <input type = "text" name = "title" value = "'.$title.'" size = "150">
+    <input type = "text" required name = "title" value = "'.$title.'" size = "150">
     </p><p>
     著者:<br>
-    <input type = "text" name = "author" value = "'.$author.'" size = "150">
+    <input type = "text" required name = "author" value = "'.$author.'" size = "150">
     </p><p>
     出版:<br>
-    <input type = "text" name = "publisher" value = "'.$publisher.'"  size = "150">
+    <input type = "text" required name = "publisher" value = "'.$publisher.'"  size = "150">
     </p><p>
     ジャンル:<br>
-    <input type = "text" name = "genre" value = "" size = "150">
+    <input type = "text" required name = "genre" value = "" size = "150">
     </p><p>
-    <input type = "submit" value = "登録" />
+    <input type = "submit" value = "登録">
     </form>
 
     </body>
