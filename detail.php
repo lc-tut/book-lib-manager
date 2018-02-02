@@ -20,5 +20,5 @@ $openbd_data = json_decode(file_get_contents("https://api.openbd.jp/v1/get?isbn=
     </head>
     <body>
         <h1>書籍詳細</h1>
-        <img src="<?php he($openbd_data[0]->onix->DescriptiveDetail->CollateralDetail->SupportingResource->ResourceVersion->ResourceLink)?>" alt="書写">
+        <img src="<?php he($openbd_data[0]->onix->CollateralDetail->SupportingResource[0]->ResourceVersion[0]->ResourceLink)?>" alt="書写">
     </body>
