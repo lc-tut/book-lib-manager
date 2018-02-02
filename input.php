@@ -3,7 +3,7 @@ try{
     if(mb_strlen($_GET['isbn']) != 13) throw new Exception("ISBNが不正です。");
     $isbn = $_GET['isbn'];
 
-    $openbd_data = json_decode(file_get_contents("https://api.openbd.jp/v1/get?isbn=$argv[1]"));
+    $openbd_data = json_decode(file_get_contents("https://api.openbd.jp/v1/get?isbn=$isbn"));
 
     $isbn = $openbd_data[0]->summary->isbn;
     $title = $openbd_data[0]->summary->title;
