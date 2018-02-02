@@ -2,20 +2,14 @@
 try{
     if(mb_strlen($_GET['isbn']) != 13) throw new Exception("ISBNが不正です。");
     $isbn = $_GET['isbn'];
-    $API_XML = simplexml_load_file("http://www.hanmoto.com/api/book.php?ISBN=$isbn");
 
-    $json = json_encode($API_XML);
+    $openbd_data = json_decode(file_get_contents("https://api.openbd.jp/v1/get?isbn=$argv[1]"));
 
-    $API_DATA = json_decode($json, true);
-
-    $isbn = $API_DATA['Head']["param"]['isbn'];
-
-    $title = $API_DATA['Book']['Product']['DescriptiveDetail']['TitleDetail']['TitleElement']['TitleText'];
-
-    $author = $API_DATA['Book']['Product']['DescriptiveDetail']['Contributor']['0']['PersonName'];
-
-    $publisher = $API_DATA['Book']['Product']['PublishingDetail']['Imprint']['ImprintName'];
-
+    $isbn = $openbd_data[0]->summary->isbn;
+    $title = $openbd_data[0]->summary->title;
+    $publisher = $openbd_data[0]->summary->publisher;
+    $author = $openbd_data[0]->summary->author;
+    
     print ('
     <!DOCTYPE HTML>
     <html>
