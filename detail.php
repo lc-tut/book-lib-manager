@@ -30,5 +30,49 @@ $openbd_data = json_decode(file_get_contents("https://api.openbd.jp/v1/get?isbn=
             <td>タイトル (ヨミ)</td>
             <td><?php he($openbd_data[0]->onix->DescriptiveDetail->TitleDetail->TitleElement->TitleText->collationkey)?></td>
         </tr>
+        <tr>
+            <td>著者1</td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[0]->PersonName->content)?></td>
+        </tr>
+        <tr>
+            <td>著者1(ヨミ)</td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[0]->PersonName->collationKey)?></td>
+        </tr>
+        <tr>
+            <td>著者2</td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[1]->PersonName->content)?></td>
+        </tr>
+        <tr>
+            <td>著者2(ヨミ)</td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[1]->PersonName->collationKey)?></td>
+        </tr>
+        <tr>
+            <td>著者3</td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[2]->PersonName->content)?></td>
+        </tr>
+        <tr>
+            <td>著者3(ヨミ)</td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[2]->PersonName->collationKey)?></td>
+        </tr>
+        <tr>
+            <td>著者4</td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[3]->PersonName->content)?></td>
+        </tr>
+        <tr>
+            <td>著者4(ヨミ)</td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[3]->PersonName->collationKey)?></td>
+        </tr>
+        <tr>
+            <td>ページ数</td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Extent[0]->ExtentValue)?></td>
+        </tr>
+        <tr>
+            <td>出版社</td>
+            <td><?php he($openbd_data[0]->onix->PublishingDetail->Publisher->PublisherName)?></td>
+        </tr>
+        <tr>
+            <td>内容・あらすじ</td>
+            <td><?php he($openbd_data[0]->onix->CollateralDetail->TextContent[0]->Text)?></td>
+        </tr>
     </table>
 </body>
