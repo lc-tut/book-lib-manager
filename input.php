@@ -39,6 +39,10 @@ try{
     <input type = "submit" value = "登録">
     </form>
 
+    <br>
+    <br>
+    <a href="input_hanmoto.php?isbn='.$isbn.'">もしデータが取得できなかった場合はこちらをクリックして下さい。版元ドットコムよりデータ取得を試みます</a>
+
     </body>
 
     </html>
