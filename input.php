@@ -41,7 +41,7 @@ try{
 
     <br>
     <br>
-    <a href="input_hanmoto.php?isbn='.$isbn.'">もしデータが取得できなかった場合はこちらをクリックして下さい。版元ドットコムよりデータ取得を試みます</a>
+    <a href="input_hanmoto.php?isbn='.$_GET['isbn'].'">もしデータが取得できなかった場合はこちらをクリックして下さい。版元ドットコムよりデータ取得を試みます</a>
 
     </body>
 
