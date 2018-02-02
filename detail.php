@@ -36,7 +36,7 @@ $openbd_data = json_decode(file_get_contents("https://api.openbd.jp/v1/get?isbn=
         </tr>
         <tr>
             <td>著者1(ヨミ)</td>
-            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[0]->PersonName->collationKey)?></td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[0]->PersonName->collationkey)?></td>
         </tr>
         <tr>
             <td>著者2</td>
@@ -44,7 +44,7 @@ $openbd_data = json_decode(file_get_contents("https://api.openbd.jp/v1/get?isbn=
         </tr>
         <tr>
             <td>著者2(ヨミ)</td>
-            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[1]->PersonName->collationKey)?></td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[1]->PersonName->collationkey)?></td>
         </tr>
         <tr>
             <td>著者3</td>
@@ -52,7 +52,7 @@ $openbd_data = json_decode(file_get_contents("https://api.openbd.jp/v1/get?isbn=
         </tr>
         <tr>
             <td>著者3(ヨミ)</td>
-            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[2]->PersonName->collationKey)?></td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[2]->PersonName->collationkey)?></td>
         </tr>
         <tr>
             <td>著者4</td>
@@ -60,7 +60,7 @@ $openbd_data = json_decode(file_get_contents("https://api.openbd.jp/v1/get?isbn=
         </tr>
         <tr>
             <td>著者4(ヨミ)</td>
-            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[3]->PersonName->collationKey)?></td>
+            <td><?php he($openbd_data[0]->onix->DescriptiveDetail->Contributor[3]->PersonName->collationkey)?></td>
         </tr>
         <tr>
             <td>ページ数</td>
