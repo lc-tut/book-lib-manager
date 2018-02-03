@@ -63,9 +63,9 @@
           </tr>
         <?php 
         }
-        echo "データ件数: h($data_num)";
         $db = null;?>
       </tbody>
     </table>
+    <?php echo "データ件数: ".h($data_num);?>
   </body>
 </html>
