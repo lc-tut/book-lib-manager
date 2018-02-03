@@ -49,7 +49,9 @@
       </thead>
       <tbody>
         <?php
+        $data_num = 0;
         while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
+          $data_num++;
         ?>
           <tr>
             <td><a href="detail.php?isbn=<?=h($row['ISBN'])?>"><?=h($row['title'])?></a></th>
@@ -61,6 +63,7 @@
           </tr>
         <?php 
         }
+        echo "データ件数: h($data_num)";
         $db = null;?>
       </tbody>
     </table>
