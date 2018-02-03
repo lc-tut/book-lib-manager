@@ -57,6 +57,7 @@
         ?>
       </tbody>
     </table>
+    <?php echo "データ件数: ".h($data_num);?>
     <a href="./">一覧に戻る</a>
   </body>
 </html>
