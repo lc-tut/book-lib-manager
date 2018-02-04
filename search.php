@@ -41,7 +41,9 @@
       </thead>
       <tbody>
         <?php
+        $data_num = 0;
         while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
+          $data_num++;
         ?>
           <tr>
             <td><a href="edit.php?isbn=<?=h($row['ISBN'])?>"><?=h($row['title'])?></a></th>
