@@ -45,7 +45,7 @@
       ジャンル:
       <br>
       <input type="text" name="genre" size="150" value="<?php echo h($result['genre'], ENT_QUOTES, 'UTF-8'); ?>">
-      <input type="hidden" name="ISBN" value="<?php echo h($result['ISBN'], ENT_QUOTES, 'UTF-8'); ?>">
+      <input type="hidden" name="ISBN" value="<?php echo $result['ISBN']; ?>">
       <br>
       <br>
       <input type="submit" value="登録">
