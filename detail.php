@@ -79,6 +79,6 @@ $openbd_data = json_decode(file_get_contents("https://api.openbd.jp/v1/get?isbn=
             <td><?php he($openbd_data[0]->onix->CollateralDetail->TextContent[0]->Text)?></td>
         </tr>
     </table>
-    <a href="edit.php?isbn=<?php he($isbn);?>">編集</a>
-    <a href="delete_confirm.php?isbn=<?php he($isbn);?>">削除</a>
+    <a href="./edit.php?isbn=<?php he($isbn);?>">編集</a>
+    <a href="./delete_confirm.php?isbn=<?php he($isbn);?>">削除</a>
 </body>
