@@ -62,10 +62,13 @@
         	  <td><a href="refine.php?column=borrower&text=<?=h($row['borrower'])?>"><?=h($row['borrower'])?></a></th>
           </tr>
         <?php 
-        }
-        $db = null;?>
+          }
+        ?>
       </tbody>
     </table>
-    <?php echo "データ件数: ".h($data_num);?>
+    <?php 
+      echo "データ件数: ".h($data_num);
+      $db = null;
+    ?>
   </body>
 </html>
