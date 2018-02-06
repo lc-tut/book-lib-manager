@@ -1,9 +1,9 @@
 <?php
 
 function getDb() {
-  $dsn = 'mysql:dbname=lclib2; host=localhost';
-  $usr = 'root';
-  $passwd = 'password';
+  $dsn = 'mysql:dbname=<データベース名>; host=<DBサーバーIP もしくは localhost>';
+  $usr = '<DB ユーザー名>';
+  $passwd = '<DB パスワード>';
 
   try {
     $db = new PDO($dsn, $usr, $passwd);

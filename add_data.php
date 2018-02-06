@@ -1,5 +1,5 @@
 <?php
-  require_once 'DbManager.php';
+  require_once '../DbManager.php';
   try{
   
     if(strlen($_POST['ISBN']) != 13) throw new Exception("ISBNが正しくありません。");

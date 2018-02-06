@@ -1,5 +1,5 @@
 <?php
-      require_once '../DbManager.php';
+      require_once '../../DbManager.php';
       try{
         $sql = "select * from books";
         $stmh = $db->prepare($sql);

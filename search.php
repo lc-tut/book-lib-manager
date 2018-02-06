@@ -15,7 +15,7 @@
   </head>
   <body>
     <?php
-      require_once 'DbManager.php';
+      require_once '../DbManager.php';
       try{
         if(empty($_GET['keyword'])) throw new Exception("検索キーワードが入力されていません");
         $char = $_GET['keyword'];

@@ -1,6 +1,6 @@
 <?php
 
-  require_once 'DbManager.php'; 
+  require_once '../DbManager.php'; 
   
   try { 
     if (empty($_GET['isbn'])) throw new Exception("ISBNが指定されていません");

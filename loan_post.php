@@ -1,5 +1,5 @@
 <?php
-  require_once 'DbManager.php';
+  require_once '../DbManager.php';
   require_once 'FelicaReader.php';
   try{
     if(strlen($ID) != 8) throw new Exception('学生証の読み取りができませんでした'.h($ID));
