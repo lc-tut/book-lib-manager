@@ -1,5 +1,5 @@
 <?php
-  require_once '../DbManager.php';
+  require_once '../conf/DbManager.php';
  
   try {
     if (empty($_POST['ISBN'])) throw new Exception('ISBNが指定されていません。');

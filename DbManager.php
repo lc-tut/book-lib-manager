@@ -1,5 +1,5 @@
 <?php
-
+/*このファイルはドキュメントルートからみて "../conf/DbManager.php" となるように置いて下さい*/
 function getDb() {
   $dsn = 'mysql:dbname=<データベース名>; host=<DBサーバーIP もしくは localhost>';
   $usr = '<DB ユーザー名>';

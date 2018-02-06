@@ -15,7 +15,7 @@
     </head>
   <body>
     <?php
-    require_once '../DbManager.php';
+    require_once '../conf/DbManager.php';
     try{
       $column = $_GET['column'];
       $char = $_GET['text'];
