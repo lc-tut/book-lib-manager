@@ -59,7 +59,10 @@
         ?>
       </tbody>
     </table>
-    <?php echo "データ件数: ".h($data_num);?>
+    <?php 
+      echo "データ件数: ".h($data_num);
+      $db= null;
+    ?>
     <a href="./">一覧に戻る</a>
   </body>
 </html>
