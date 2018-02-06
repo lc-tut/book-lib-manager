@@ -1,6 +1,6 @@
 <?php
 
-  require_once '../conf/DbManager.php'; 
+  require_once 'DbManager.php'; 
   
   try { 
     if (empty($_GET['isbn'])) throw new Exception("ISBNが指定されていません");
@@ -45,7 +45,7 @@
       ジャンル:
       <br>
       <input type="text" name="genre" size="150" value="<?php echo h($result['genre'], ENT_QUOTES, 'UTF-8'); ?>">
-      <input type="hidden" name="ISBN" value="<?php echo $result['ISBN']; ?>">
+      <input type="hidden" name="ISBN" value="<?php echo h($result['ISBN'], ENT_QUOTES, 'UTF-8'); ?>">
       <br>
       <br>
       <input type="submit" value="登録">
