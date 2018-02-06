@@ -3,7 +3,7 @@
  
   try {
     if (empty($_POST['ISBN'])) throw new Exception('ISBNが指定されていません。');
-    if (strlen((int)($_POST['ISBN']) != 13)) throw new Exception('ISBNが間違っている可能性があります。');
+    if (strlen((int)($_POST['ISBN']) != 13)) throw new Exception('ISBNが間違っている可能性があります。'.$_POST['ISBN']);
     $db = getDb();
     $sql = "UPDATE books SET title = ?, author = ?, publisher = ?, genre = ? WHERE ISBN = ?";
     $stmt = $db->prepare($sql);
