@@ -1,9 +1,10 @@
 <?php
   require_once '../conf/DbManager.php';
+  require_once 'IsbnConsistencyCheck.php';
  
   try {
     if (empty($_POST['ISBN'])) throw new Exception('ISBNが指定されていません。');
-    if (strlen($_POST['ISBN']) != 13) throw new Exception('ISBNが間違っている可能性があります。');
+    if (IsbnConsistencyCheck($_POST['ISBN'])) throw new Exception('ISBNが間違っている可能性があります。');
     $db = getDb();
     $sql = "UPDATE books SET title = ?, author = ?, publisher = ?, genre = ? WHERE ISBN = ?";
     $stmt = $db->prepare($sql);

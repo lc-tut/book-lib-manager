@@ -1,8 +1,9 @@
 <?php
   require_once '../conf/DbManager.php';
+  require_once 'IsbnConsistencyCheck.php';
   try{
   
-    if(strlen($_POST['ISBN']) != 13) throw new Exception("ISBNが正しくありません。");
+    if(IsbnConsistencyCheck($_POST['ISBN'])) throw new Exception("ISBNが正しくありません。");
     else{
   
       $stt = $db->prepare('INSERT INTO books(ISBN, title, author, publisher, genre, status, borrower)VALUES(:ISBN, :title, :author, :publisher, :genre, :status, :borrower)');

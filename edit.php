@@ -1,11 +1,12 @@
 <?php
 
-  require_once '../conf/DbManager.php'; 
+  require_once '../conf/DbManager.php';
+  require_once 'IsbnConsistencyCheck.php';
   
   try { 
     if (empty($_GET['isbn'])) throw new Exception("ISBNが指定されていません");
+    if (IsbnConsistencyCheck($_GET['isbn'])) throw new Exception("ISBNが不正です");
     $ISBN = (int) $_GET['isbn'];
-    if(mb_strlen($ISBN) != 13) throw new Exception("ISBNが間違っている可能性があります。");
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "SELECT * from books WHERE ISBN = ?";
