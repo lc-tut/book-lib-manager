@@ -22,5 +22,5 @@
     $db = null;
     }
     header('Content-type: application/json');
-    echo json_encode($books_data);
+    echo json_encode($books_data, JSON_UNESCAPED_UNICODE);
 ?>
