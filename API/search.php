@@ -11,9 +11,8 @@
     die();
   }
 
-  $books_data = array();
   while($row = $stmh->fetch(PDO::FETCH_ASSOC)){
-    $books_data[]=array(
+    $books_data[
       'ISBN'=>$row['ISBN'],
       'title'=>$row['title'],
       'author'=>$row['author'],
@@ -21,7 +20,7 @@
       'genre'=>$row['genre'],
       'status'=>$row['status'],
       'borrower'=>$row['borrower']
-    );
+    ];
     $db = null;
   }
   header('Content-type: application/json');
