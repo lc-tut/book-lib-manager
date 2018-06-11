@@ -1,5 +1,5 @@
 <?php
-  require_once '../conf/DbManager.php';
+  require_once '../../conf/DbManager.php';
   try{
     if(empty($_GET['keyword'])) throw new Exception("検索キーワードが入力されていません");
     $char = $_GET['keyword'];
